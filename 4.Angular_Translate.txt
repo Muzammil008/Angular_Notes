@@ -1,0 +1,26 @@
+1. npm install @ngx-translate/core --save in project directory cmd
+2. npm install @ngx-translate/http-loader --save in project directory cmd.
+3.import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
+  import {TranslateHttpLoader} from '@ngx-translate/http-loader'; in app.module.ts
+4.Create i18n folder and make en.json or ur.json .....
+5.// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+6. TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
+7.import { TranslateService } from '@ngx-translate/core'; in where you want to use in component
+
+8.constructor(private translate: TranslateService){
+    translate.addLangs(['en', 'ur']);
+    translate.setDefaultLang('ur');
+
+    let browserlang = translate.getBrowserLang();
+    translate.use('ur')
+  }
+9.<h1>{{'Password' | translate}}</h1> in html

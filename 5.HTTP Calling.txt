@@ -1,0 +1,4 @@
+1. import {HttpClientModule} from '@angular/common/http'; in app.module.ts
+2. Inject in imports
+3.Inject in any component or service import {HttpClient} from '@angular/common/http';
+4.Create Object of HttpClient 

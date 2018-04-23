@@ -1,0 +1,14 @@
+1.import { Routes, RouterModule } from '@angular/router';
+2. RouterModule.forRoot
+([
+      { path: 'home', component: HomeComponent },
+  
+    { path: '', redirectTo:'/home',pathMatch: 'full' },
+   
+   { path: 'about', component: AboutComponent },
+   
+   { path: 'contact', component: ContactComponent }
+   
+ ]) in import
+3.import { Router } from '@angular/router'; in where you want to use 
+4.import {ActivatedRoute} from "@angular/router"; in where we want to get data from route

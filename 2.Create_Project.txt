@@ -1,0 +1,2 @@
+1.Open CMD and write ng new appname and enter.
+2.You can check config of project like all version that are use in Project using this command ng -v

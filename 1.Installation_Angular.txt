@@ -1,0 +1,2 @@
+1.Open CMD and write npm install -g @angular/cli@latest and enter
+2.Now You can check version from this command ng -v

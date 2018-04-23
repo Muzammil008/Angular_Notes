@@ -1,0 +1,25 @@
+ <form #form="ngForm" (ngSubmit)="SignUp(form.value)" novalidate>
+                <input type="hidden" value="create_customer" name="form_type" />
+                <input type="hidden" name="utf8" value="✓" />
+
+				
+				        <div class="form-group">
+                          <label for="email">Email
+                              <span class="req">*</span>
+                            </label>
+                          <input type="text" #emailRef="ngModel" required  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" class="form-control" name="email" [(ngModel)]="email">
+                           <div *ngIf="emailRef.errors && (emailRef.dirty || emailRef.touched)" class="alert alert-danger">
+                            <div *ngIf="emailRef.errors.required">
+                              Please Enter a Email
+                            </div>
+                            <div *ngIf="emailRef.errors && emailRef.errors.pattern">
+                              Please Enter valid Email
+                            </div>
+                          </div>
+                       
+                       
+                       
+                        </div>
+				
+				
+				 </form>

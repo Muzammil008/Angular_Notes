@@ -1,0 +1,28 @@
+<div class="container">
+
+  <form #form="ngForm" (ngSubmit)="signup(form)" novalidate>
+      <div class="form-group">
+          <label for="email">User Name
+              <span class="req">*</span>
+            </label>
+    <input type="text" name="username" minlength="4" maxlength="30"  #nameRefe="ngModel" [(ngModel)]="username"   required >
+    <div *ngIf="nameRefe.errors && (nameRefe.dirty || nameRefe.touched)" class="alert alert-danger">
+        <div *ngIf="nameRefe.errors.required">
+          Please Enter a User Name
+        </div>
+        <div *ngIf="nameRefe.errors.minlength">
+          Please Enter atleast 4 characters
+        </div>
+      </div>
+    </div>
+
+ 
+
+
+    <input type="submit" value="Submit" [disabled]="!form.valid">
+  </form>
+
+</div>
+
+1.import { FormsModule } from '@angular/forms';
+2.add in ngModule import FormsModule 
